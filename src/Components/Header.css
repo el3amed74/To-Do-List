@@ -1,0 +1,51 @@
+.headercontainer{
+    background-color: #F27052;
+    height: 95px;
+    border-radius: 10px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.header .img{
+    margin-right: 15px;
+}
+form{
+    padding-left: 5px;
+}
+.taskInput{
+    width: 280px;
+    padding: 12px;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    color: #0D0D0D;
+}
+.taskInput:focus{
+    outline:none  ;
+}
+.sunmitbtn{
+    width: 80px;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+    border-radius: 15px;
+    color: white;
+    background-color: #0D0D0D;
+}
+.sunmitbtn:hover{    
+    transform: scale(1.1);
+    
+}
+.sunmitbtn:disabled{
+    cursor: not-allowed;
+    opacity: .3;
+    transform: scale(1);
+    color: white;
+    background-color: #0D0D0D;
+}
