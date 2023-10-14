@@ -4,12 +4,13 @@ import Header from './Components/Header';
 import Lists from './Components/List';
 
 function App() {
+
   const [allTasks, setAlltasks] = useState([]);
 
   function addTask(task) {
     setAlltasks([...allTasks, task]);
-
   }
+  
   return (
     <div className="AppContainer">
       <div className="App">

@@ -39,6 +39,19 @@ ul {
     cursor: pointer;
 }
 .completeIcone:hover {
-    fill: green;
+    fill: rgb(14, 108, 14);
     cursor: pointer;    
 }
+.completedTask{
+    color: rgb(14, 108, 14);
+    text-decoration: line-through ;
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.listItem.remove {
+    animation: fadeOut 0.3s ease;
+}
+

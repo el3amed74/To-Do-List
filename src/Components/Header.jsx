@@ -1,13 +1,17 @@
 import { useState } from "react";
 import logo from "../Assets/listLogo.svg";
 import "./Header.css";
+
 const Header = (props) => {
+
     const [task, setTask] = useState("");
+
     const submitForm = (e) => {
         e.preventDefault();
         props.onAdd(task);
         setTask("");
     }
+
     return (
         <div className="headercontainer">
             <div className="header">
@@ -20,7 +24,6 @@ const Header = (props) => {
                 <input type="text" placeholder="task" className="taskInput"
                     value={task}
                     onChange={(e) => { setTask(e.target.value) }} />
-
                 <button type="submit" disabled={!task} className="sunmitbtn">Add</button>
             </form>
 
