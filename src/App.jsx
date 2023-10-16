@@ -8,7 +8,7 @@ function App() {
   const [allTasks, setAlltasks] = useState([]);
 
   function addTask(task) {
-    setAlltasks([...allTasks, task]);
+    setAlltasks([ ...allTasks, task]);
   }
 
   return (
