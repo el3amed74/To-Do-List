@@ -5,19 +5,20 @@ import Lists from './Components/List';
 import Palestine from './Components/Palestine';
 function App() {
 
-  const [allTasks, setAlltasks] = useState([]);
-
+  const [allTasks, setAlltasks] = useState(Object.values(localStorage));
   function addTask(task) {
-    setAlltasks([ ...allTasks, task]);
-  }
 
+    setAlltasks([...allTasks, task]);
+    localStorage.clear();
+  }
   return (
     <>
       <Palestine />
       <div className="AppContainer">
         <div className="App">
           <Header onAdd={addTask} />
-          <Lists allTasks={allTasks} />
+          {localStorage.length > 0 ? <Lists allTasks={Object.values(localStorage)}/> : <Lists allTasks={allTasks} />}
+          {/* <Lists allTasks={allTasks} /> */}
         </div>
       </div>
     </>
