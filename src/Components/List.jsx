@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import "./List.css";
 
 const Lists = (props) => {
@@ -7,17 +7,27 @@ const Lists = (props) => {
     const [completedTasks, setCompletedTasks] = useState([]);
     let tasks = props.allTasks;
 
+    useEffect(() => {
+        if (localStorage.getItem('CompletedTasks')){
+            let storedCompletedTasks = JSON.parse(localStorage.getItem("CompletedTasks"));
+            setCompletedTasks(storedCompletedTasks);
+        }
+    }, []);
+
     const DeleteTask = (idx) => {
 
         const listItems = document.querySelectorAll('.listItem');
         listItems[idx].classList.add('remove');
+
         setTimeout(() => {
             tasks.splice(idx, 1);
+            localStorage.setItem("ToDoList", JSON.stringify(tasks));
             setUpdateTasks([...updateTasks, tasks]);
         }, 250);
 
         completedTasks.splice(idx, 1);
         setCompletedTasks(completedTasks);
+        localStorage.setItem("CompletedTasks", JSON.stringify(completedTasks))
         return tasks;
     }
 
@@ -26,12 +36,13 @@ const Lists = (props) => {
         const updatedCompletedTasks = [...completedTasks];
         updatedCompletedTasks[idx] = !updatedCompletedTasks[idx];
         setCompletedTasks(updatedCompletedTasks);
+        localStorage.setItem("CompletedTasks", JSON.stringify(updatedCompletedTasks));
         return tasks;
     }
 
     let displayTasks =
         tasks.map((task, idx) => {
-            localStorage.setItem(idx, task);
+        
             const isCompleted = completedTasks[idx] || false;
             return (
                 <li key={idx} className={`listItem ${isCompleted ? "completedTask" : ""}`}>
