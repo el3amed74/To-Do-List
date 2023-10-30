@@ -13,12 +13,14 @@ const Header = (props) => {
     }
 
     return (
-        <div className="headercontainer">
+        <div className="headercontainer" >
             <div className="header">
-                <div className="img">
-                    <img src={logo} width="20px" height="25px" alt="logo" />
+                <div className="headreInfo">
+                    <div className="img">
+                        <img src={logo} width="20px" height="25px" alt="logo" />
+                    </div>
+                    <h3>To-Do-List</h3>
                 </div>
-                <h3>To-Do-List</h3>
             </div>
             <form action="" onSubmit={submitForm}>
                 <input type="text" placeholder="task" className="taskInput"

@@ -3,8 +3,11 @@
     height: 95px;
     border-radius: 10px;
 }
-
-.header {
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+.headreInfo {
     display: flex;
     justify-content: center;
     padding-top: 5px;

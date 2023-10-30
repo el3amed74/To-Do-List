@@ -2,6 +2,7 @@
     color: white;
     padding-left: 5px;
     margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -12,20 +13,22 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 35px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #0D0D0D;
+    min-height: 40px;
     background-color: #F2C84B;
     margin-top: 5px;
     padding-left: 15px;
     border-radius: 5px;
 }
 
-.listItem span{
-    width: 180px;
+.listItem span {
+    width: 250px;
+    min-height: 33px;
     overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0D0D0D;
 }
+
 .btns {
     width: 100px;
     display: flex;
@@ -38,24 +41,45 @@ ul {
     width: 25px;
     height: 25px;
 }
-.deleteIcon:hover{
+
+.deleteIcon:hover {
     fill: red;
     cursor: pointer;
 }
+
 .completeIcone:hover {
     fill: rgb(14, 108, 14);
-    cursor: pointer;    
+    cursor: pointer;
 }
-.completedTask{
+
+.completedTask {
     color: rgb(14, 108, 14);
-    text-decoration: line-through ;
+    text-decoration: line-through;
 }
+
+.completedTask span {
+    color: green;
+}
+
 @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .listItem.remove {
     animation: fadeOut 0.3s ease;
 }
 
+@media screen and (min-width: 320px) and (max-width: 360px) {
+
+    .listItem span {
+
+        width: 120px;
+    }
+    
+}
